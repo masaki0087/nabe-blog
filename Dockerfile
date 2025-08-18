@@ -2,10 +2,10 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY nabe-blog/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY nabe-blog/. .
 
 CMD ["npm", "run", "dev"]
