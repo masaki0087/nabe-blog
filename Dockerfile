@@ -1,11 +1,15 @@
 FROM node:20-alpine
 
+# Gitをインストール
+RUN apk add --no-cache git
+
 WORKDIR /app
 
-COPY nabe-blog/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPY nabe-blog/. .
+COPY . .
 
+USER node
 CMD ["npm", "run", "dev"]

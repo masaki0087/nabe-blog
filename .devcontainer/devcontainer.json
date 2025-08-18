@@ -14,5 +14,12 @@
         "editor.formatOnSave": true
       }
     }
-  }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [3000]
 }

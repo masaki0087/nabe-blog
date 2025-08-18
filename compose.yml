@@ -9,7 +9,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./nabe-blog:/app
+      - .:/app
       - /app/node_modules
     environment:
       - WATCHPACK_POLLING=true
+    user: "node"
