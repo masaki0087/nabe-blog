@@ -1,6 +1,8 @@
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
+import nextConfig from "../../../next.config.mjs";
+const BASE_PATH = nextConfig.basePath || "";
 
 type Props = {
   title: string;
@@ -11,7 +13,7 @@ type Props = {
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
     <Image
-      src={src}
+      src={`${BASE_PATH}${src}`}
       alt={`Cover Image for ${title}`}
       className={cn("shadow-sm w-full", {
         "hover:shadow-lg transition-shadow duration-200": slug,
